@@ -21,7 +21,12 @@ def mat_prcoessing():
          print(value)
 
     original_data = data;
-
+    print ("data shape test: ",data[2:4,:500])
+    PPG_data = data[2:4,:500]
+    #or as banavar said
+    #PPG_data = data[2,:100]
+    #PPG_data_2 = data[3,:100]
+    print("Data size is: ", PPG_data.shape)
 # # Reshape the original data into windows of length 500 with a 25 sample point (0.2 seconds) shift
 #     window_length = 500
 #     shift = 25
@@ -47,7 +52,7 @@ def mat_prcoessing():
 #
 #     print("Resized data shape:", resized_data.shape)
 
-    return original_data
+    return PPG_data
 # # Access the 'sig' variable from the loaded data
 # sig_data = mat_data['sig']
 #
@@ -61,3 +66,5 @@ def mat_prcoessing():
 # plt.ylabel('Amplitude')
 # plt.legend()
 # plt.show()
+original_data = mat_prcoessing()
+
